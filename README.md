@@ -13,30 +13,44 @@ more in (game_rules_and_sudo_code.md)
 
 ## API and Data Sample
 
-jersevice: http://jservice.io/
+open trivia: https://opentdb.com/api.php
 
-......Jservice json......
+......open trivia json......
 
 ```
   {
-    "id": 28079,
-    "answer": "gerrymandering",
-    "question": "North Carolina's long, meandering \"I-85 District\" has been called an example of this tactic named for a politician",
-    "value": 500,
-    "airdate": "1999-07-05T12:00:00.000Z",
-    "created_at": "2014-02-11T23:02:33.156Z",
-    "updated_at": "2014-02-11T23:02:33.156Z",
-    "category_id": 3141,
-    "game_id": null,
-    "invalid_count": null,
-    "category": {
-      "id": 3141,
-      "title": "congressional districts",
-      "created_at": "2014-02-11T23:02:32.637Z",
-      "updated_at": "2014-02-11T23:02:32.637Z",
-      "clues_count": 20
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Art",
+      "type": "boolean",
+      "difficulty": "medium",
+      "question": "Venus of Willendorf is one of the earliest works of art, depicting the planets Mars and Venus embrace in the heavens at night.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
     }
-  }
+  ]
+}
+
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Sports",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What team won the 2016 MLS Cup?",
+      "correct_answer": "Seattle Sounders",
+      "incorrect_answers": [
+        "Colorado Rapids",
+        "Toronto FC",
+        "Montreal Impact"
+      ]
+    }
+  ]
+}
 ```
 
 ## Wireframes
