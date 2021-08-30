@@ -9,7 +9,7 @@ QUIZ-ard
 ## Project Description
 
 An RPG browser game that uses the open trivia API to show you a quiz question at random with clues, you start every wrong answer you loose a health point, but if you answer correctly you get a new item (clue counter) and show you a new trivia question - if you run out of health points, you lose but if you defeat the time "QUIZ-ard" you win the game!
-
+more in (game_rules_and_sudo_code.md)
 ## API and Data Sample
 
 jersevic: http://jservice.io/
@@ -47,7 +47,7 @@ jersevic: http://jservice.io/
 ![Main play area splashpage](assets/play_area_desktop.png)
 ![Main play area splashpage mobile](assets/play_area_mobile.png)
 ![How to play splashpage](assets/how_to_play_desktop.png)
-![How to play splashpage](assets/how_to_play_desktop.png)
+![How to play splashpage mobile](assets/How_to_play_mobile.png)
 
 
 #### MVP
