@@ -65,7 +65,7 @@ jersevice: http://jservice.io/
 
 ## Priority Matrix
 
-![time matrix linechart](assets/Diagram.png)
+![time matrix linechart](assets/line_chart.png)
 
 ## Timeframes
 
