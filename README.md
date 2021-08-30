@@ -12,7 +12,7 @@ An RPG browser game that uses the open trivia API to show you a quiz question at
 more in (game_rules_and_sudo_code.md)
 ## API and Data Sample
 
-jersevic: http://jservice.io/
+jersevice: http://jservice.io/
 
 ......Jservice json......
 
