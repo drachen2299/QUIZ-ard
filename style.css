@@ -1,0 +1,43 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* NAV BAR */
+nav {
+    display: flex;
+    padding: 10px 5px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+
+}
+.rules {
+    flex: start;
+}
+
+/* MAIN CONTENT */
+.main-container {
+    background-image: url(assets/42515016-seamless-vector-cartoon-landscape-fantasy-unending-background-with-separated-layers-for-game-design.jpeg);
+    margin: 10px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-text {
+    padding: 5px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 30px);
+    gap: 15px;
+}
