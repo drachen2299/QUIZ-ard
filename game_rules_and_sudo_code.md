@@ -1,5 +1,6 @@
 # Game Rules 
-How the game will work, 
+How the game will work; 
+
 Players play a quiz, if they answer 5 questions right they get to the final boss, which will give you three chances to beat him. 
 
 

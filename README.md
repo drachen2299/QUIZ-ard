@@ -48,6 +48,10 @@ jersevic: http://jservice.io/
 ![Main play area splashpage mobile](assets/play_area_mobile.png)
 ![How to play splashpage](assets/how_to_play_desktop.png)
 ![How to play splashpage mobile](assets/How_to_play_mobile.png)
+![Loss slash](assets/loss_promt.png)
+![win slash](assets/win_promt.png)
+
+
 
 
 #### MVP
@@ -86,17 +90,3 @@ Include a full list of features that have been prioritized based on the `Time an
 | how to play css       |    l     |      2hrs      |       0       |      0      |
 | Wireframe/logo        |    l     |      2hrs      |       0       |      0      |
 | Total                 |    l     |     34hrs      |     4hrs      |    4hrs     |
-
-## Code Snippet
-
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-```
-
-## Change Log
-
-Use this section to document what changes were made and the reasoning behind those changes.
