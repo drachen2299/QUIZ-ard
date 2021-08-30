@@ -10,6 +10,7 @@ QUIZ-ard
 
 An RPG browser game that uses the open trivia API to show you a quiz question at random with clues, you start every wrong answer you loose a health point, but if you answer correctly you get a new item (clue counter) and show you a new trivia question - if you run out of health points, you lose but if you defeat the time "QUIZ-ard" you win the game!
 more in (game_rules_and_sudo_code.md)
+
 ## API and Data Sample
 
 jersevice: http://jservice.io/
@@ -38,8 +39,6 @@ jersevice: http://jservice.io/
   }
 ```
 
-
-
 ## Wireframes
 
 ![Main game splashpage](assets/main_page_dekstop.png)
@@ -50,9 +49,6 @@ jersevice: http://jservice.io/
 ![How to play splashpage mobile](assets/How_to_play_mobile.png)
 ![Loss slash](assets/loss_promt.png)
 ![win slash](assets/win_promt.png)
-
-
-
 
 #### MVP
 
@@ -69,7 +65,7 @@ jersevice: http://jservice.io/
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix. Link this image in a similar manner to your wireframes
+![time matrix linechart](assets/Diagram.png)
 
 ## Timeframes
 
@@ -83,8 +79,8 @@ Include a full list of features that have been prioritized based on the `Time an
 | Bug checking          |    H     |      2hrs      |       0       |      0      |
 | buttons               |    H     |      2hrs      |       0       |      0      |
 | next question page    |    H     |      2hrs      |       0       |      0      |
-| second api            |    H     |      2hrs      |       0       |      0      |
-| animation renders     |    H     |      3hrs      |       0       |      0      |
+| second api            |    l     |      2hrs      |       0       |      0      |
+| animation             |    H     |      3hrs      |       0       |      0      |
 | deployment            |    H     |     2.5hr      |       0       |      0      |
 | how to play page html |    l     |     2.5hr      |       0       |      0      |
 | how to play css       |    l     |      2hrs      |       0       |      0      |
