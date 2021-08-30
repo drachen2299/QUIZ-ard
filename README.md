@@ -13,9 +13,6 @@ An RPG browser game that uses the open trivia API to show you a quiz question at
 ## API and Data Sample
 
 jersevic: http://jservice.io/
-or
-open trivia: https://opentdb.com/api.php
-https://www.programmableweb.com/api/open-trivia-database-rest-api-v1
 
 ......Jservice json......
 
@@ -41,32 +38,17 @@ https://www.programmableweb.com/api/open-trivia-database-rest-api-v1
   }
 ```
 
-.......opentdb.........
 
-```
- {
-  "response_code": 0,
-  "results": [
-    {
-      "category": "Entertainment: Television",
-      "type": "multiple",
-      "difficulty": "medium",
-      "question": "In Breaking Bad, the initials W.W. refer to which of the following?",
-      "correct_answer": "Walter White",
-      "incorrect_answers": [
-        "William Wolf",
-        "Willy Wonka",
-        "Wally Walrus"
-      ]
-    }
-  ]
-}
-```
 
 ## Wireframes
 
-![Main game splashpage](/assets/QUIZ-ard - Main Page.png)
-![Main play area splashpage](/assets/QUIZ-ard - play card.png)
+![Main game splashpage](assets/main_page_dekstop.png)
+![Main game splashpage mobile](assets/main_page_mobile.png)
+![Main play area splashpage](assets/play_area_desktop.png)
+![Main play area splashpage mobile](assets/play_area_mobile.png)
+![How to play splashpage](assets/how_to_play_desktop.png)
+![How to play splashpage](assets/how_to_play_desktop.png)
+
 
 #### MVP
 
@@ -78,7 +60,7 @@ https://www.programmableweb.com/api/open-trivia-database-rest-api-v1
 
 #### PostMVP
 
-- add second API for animations
+- add second API for animations and art assets
 - Use local storage to save user questions right or wrong for "items"(clues)
 
 ## Priority Matrix
@@ -87,25 +69,23 @@ Include a full list of features that have been prioritized based on the `Time an
 
 ## Timeframes
 
-
 | Component             | Priority | Estimated Time | Time Invested | Actual Time |
 | --------------------- | :------: | :------------: | :-----------: | :---------: |
 | Initial HTML          |    M     |      3hrs      |       0       |      0      |
-| Axios Call            |    H     |     3 hrs      |     4hrs      |    4hrs     |
+| Axios Call            |    H     |      3hrs      |     4hrs      |    4hrs     |
 | API rendering         |    H     |      2hrs      |       0       |      0      |
 | JS                    |    M     |      2hrs      |       0       |      0      |
 | General stylingCSS    |    H     |      2hrs      |       0       |      0      |
-| responsive CSS        |    H     |      2hrs      |       0       |      0      |
 | Bug checking          |    H     |      2hrs      |       0       |      0      |
 | buttons               |    H     |      2hrs      |       0       |      0      |
 | next question page    |    H     |      2hrs      |       0       |      0      |
 | second api            |    H     |      2hrs      |       0       |      0      |
 | animation renders     |    H     |      3hrs      |       0       |      0      |
-| deployment            |    H     |     2.5hr      |       0       |
-| how to play page html |    l     |     2.5hr      |       0       |
+| deployment            |    H     |     2.5hr      |       0       |      0      |
+| how to play page html |    l     |     2.5hr      |       0       |      0      |
 | how to play css       |    l     |      2hrs      |       0       |      0      |
 | Wireframe/logo        |    l     |      2hrs      |       0       |      0      |
-| Total                 |    l     |       34       |     6hrs      |    5hrs     |
+| Total                 |    l     |     34hrs      |     4hrs      |    4hrs     |
 
 ## Code Snippet
 
