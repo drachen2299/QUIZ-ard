@@ -1,10 +1,14 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Carter One', cursive;
 }
 
 /* NAV BAR */
 nav {
+    margin: 5px 10px;
+    border: 1px solid blue;
+    border-radius: 5px;
     display: flex;
     padding: 10px 5px;
     justify-content: space-around;
@@ -21,6 +25,7 @@ nav {
 
 /* MAIN CONTENT */
 .main-container {
+    border-radius: 5px;
     background-image: url(assets/42515016-seamless-vector-cartoon-landscape-fantasy-unending-background-with-separated-layers-for-game-design.jpeg);
     margin: 10px;
     height: 100vh;
@@ -33,11 +38,56 @@ nav {
 .main-text {
     padding: 5px;
     text-align: center;
+    font-weight: 600;
+    font-style: bold;
+    font-size: ;
 }
-
+.character {
+    height: 130px;
+}
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 30px);
     gap: 15px;
+}
+.btn {
+    border-radius: 5px;
+    background-color: lightblue;
+
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 426px) {
+    .main-text {
+        font-size: 24px;
+    }
+    .character {
+        height: 200px;
+    }
+    .btn {
+        font-size: 20px;
+        width: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .character {
+        height: 300px;
+    }
+    .btn {
+        width: 200px;
+    }
+}
+
+
+/* UTILITIES */
+.hide {
+    display: none;
 }

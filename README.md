@@ -85,7 +85,7 @@ open trivia: https://opentdb.com/api.php
 
 | Component             | Priority | Estimated Time | Time Invested | Actual Time |
 | --------------------- | :------: | :------------: | :-----------: | :---------: |
-| Initial HTML          |    M     |      3hrs      |       0       |      0      |
+| Initial HTML          |    C     |      3hrs      |    2.5hrs     |      0      |
 | Axios Call            |    H     |      3hrs      |     4hrs      |    4hrs     |
 | API rendering         |    H     |      2hrs      |       0       |      0      |
 | JS                    |    M     |      2hrs      |       0       |      0      |
@@ -100,3 +100,7 @@ open trivia: https://opentdb.com/api.php
 | how to play css       |    l     |      2hrs      |       0       |      0      |
 | Wireframe/logo        |    l     |      2hrs      |       0       |      0      |
 | Total                 |    l     |     34hrs      |     4hrs      |    4hrs     |
+
+# Change log
+
+
