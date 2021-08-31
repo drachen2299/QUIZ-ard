@@ -1,6 +1,6 @@
 let questionButtons = document.querySelectorAll(".question-btn");
 let mainButton = document.getElementById("play-btn");
-let nextButton = document.getElementById("next-btn");
+let nextButton = document.getElementsByClassName("next-btn");
 let mainText = document.querySelector(".main-text");
 let hearts = document.getElementsByClassName(".hearts");
 //get a random question from the opentdb api
@@ -26,7 +26,6 @@ async function fetchData() {
     });
     
     checkAnswer()
-    // nextQuestion()
     console.log(correctAnswer);
   } catch (error) {
     console.log(error);
@@ -44,30 +43,37 @@ const questionHandler = (e) => {
         console.log("logging the modal ", correctModal);
         correctModal.style.display = "block";
         correctModalContent.classList.remove("hide");
-        // setTimeout((e) => {e.target.addEventListener("click", startGame())}, 5000);
+        
       } else {
         wrongModal.style.display = "block";
         wrongModalContent.classList.remove("hide");
-        // setTimeout(() => {modal.style.display = "none";},() => {wrongModal.classList.add("hide")}, fetchData, 5000)
+        
       }}
 
     function checkAnswer() {
         questionButtons.forEach((e) => {e.removeEventListener("click", questionHandler)})
         questionButtons.forEach((e) => {e.addEventListener("click", questionHandler)})
     }
+    // let next question button remove styling and display next question
+    // let nextQuestion = (e) => {
+    //   if (correctModal.style.display === "block"){
+    //    add even listener to remove styleing and go to next question
+    //     e.target.addEventListener("click", () => {
+    //       correctModal.style.display = "none";
+    //       correctModalContent.classList.add("hide");
+    //      })
+    //   }else {
+    //     e.target.addEventListener("click", () => {
+    //     same just reveresed
+    //   }
+    // }
 
-  // function nextQuestion() {
-  //   nextButton.forEach((e) => {e.removeEventListener("click", questionHandler)})
-  //   nextButton.forEach((e) => {e.addEventListener("click", questionHandler)})
-  // }
-
-
-// fetchData()
-function startGame() {
+    function startGame() {
   mainButton.addEventListener("click", () => {
     fetchData();
     console.log(questionButtons);
     mainButton.innerText = "Next Question";
+
   });
 }
 
