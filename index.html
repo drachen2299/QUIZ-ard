@@ -20,18 +20,37 @@
     </nav>
     <main>
         <div class="main-container">
+            <p class="hearts"></p>
             <p class="main-text">Do you think you have what it takes to defeat the time QUIZ-ard and
                 save the realm?
             </p>
             <img src="assets/1133018_travyboy1_cartoon-knight.jpeg" alt="" class="character">
             <div class="grid">
-                <button class="question-btn btn"></button>
-                <button class="question-btn btn"></button>
-                <button class="question-btn btn"></button>
-                <button class="question-btn btn"></button>
+                <button class="question-btn btn hide"></button>
+                <button class="question-btn btn hide"></button>
+                <button class="question-btn btn hide"></button>
+                <button class="question-btn btn hide"></button>
             </div>
 
             <button id="play-btn" class="btn">Begin</button>
+        </div>
+        <div id="wrongModal" class="modal">
+            <div class="wrong-content hide">
+                <div class="text-area">
+                    <h1>That is <em>incorrect</em>!</h1>
+                    <p>You loose a health, and part of the universe desends into chaos!</p>
+                </div>
+                <button class="next-question btn">Continue</button>
+            </div>
+        </div>
+        <div id="correctModal" class="modal">
+            <div class="correct-content hide">
+                <div class="text-area">
+                    <h1>That is <em>correct</em>!</h1>
+                    <p>You are one step closer to defeating the evil time <em>QUIZ-ard!</em></p>
+                </div>
+                <button id="next-btn" class="btn">Continue</button>
+            </div>
         </div>
     </main>
     <footer>&copy Ben Lowry 2021</footer>

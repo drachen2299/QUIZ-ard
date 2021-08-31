@@ -40,7 +40,7 @@ nav {
     text-align: center;
     font-weight: 600;
     font-style: bold;
-    font-size: ;
+    
 }
 .character {
     height: 130px;
@@ -48,7 +48,7 @@ nav {
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 30px);
+    grid-template-rows: repeat(2, 1fr);
     gap: 15px;
 }
 .btn {
@@ -56,12 +56,55 @@ nav {
     background-color: lightblue;
 
 }
-
+.question-btn {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
 footer {
     text-align: center;
     padding-bottom: 5px;
 }
-
+/* MODALS */
+#correctModal {
+    display: none;   
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 70px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+#wrongModal {
+    display: none;   
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 70px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+.wrong-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcoral;
+    padding-bottom: 25px;
+    height: 80vh;
+}
+.correct-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightgreen;
+    padding-bottom: 25px;
+    height: 80vh;
+}
 /* MEDIA QUERIES */
 
 @media (min-width: 426px) {
