@@ -21,7 +21,7 @@ let wizModalContent = document.querySelector(".wiz-content");
 let gameOverContent = document.querySelector(".dead-content");
 let winContent = document.querySelector(".win-content");
 //score counters and health counters
-console.log(wrongModal)
+// console.log(wrongModal)
 let score = 0;
 let health = 3;
 let wizCounter = 0;
@@ -32,7 +32,7 @@ let shuffle = (a) => {
   a.sort(() => Math.random() - 0.5);
 }
 async function fetchData() {
-  let url = "https://opentdb.com/api.php?amount=1&category=15&encode=base64";
+  let url = "https://opentdb.com/api.php?amount=1&category=15&difficulty=easy&encode=base64";
 
   try {
     let response = await axios.get(url);
@@ -43,30 +43,30 @@ async function fetchData() {
     let wrongAnswers = data.results[0].incorrect_answers;
     let allAnswers = [correctAnswer, ...wrongAnswers];
     shuffle(allAnswers);
-    console.log(fullQuestion);
+    // console.log(fullQuestion);
     allAnswers.forEach((item, index) => {    
       mainText.innerText = question;
-      console.log(question);
+      // console.log(question);
       questionButtons[index].classList.remove("hide");
       questionButtons[index].innerText = atob(item);
       questionButtons[index]++;
     });
 
-    console.log(question); 
+    // console.log(question); 
 
     checkAnswer();
     console.log(atob(correctAnswer));
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 
 
 const questionHandler = (e) => {
-  console.log(e.target.innerText);
-  console.log(correctAnswer);
+  // console.log(e.target.innerText);
+  // console.log(correctAnswer);
   if (e.target.innerText === atob(correctAnswer)) {
-    console.log("logging the modal ", correctModal);
+    // console.log("logging the modal ", correctModal);
     correctModal.style.display = "block";
     correctModalContent.classList.remove("hide");
     score += 1;
@@ -75,9 +75,9 @@ const questionHandler = (e) => {
     wrongModalContent.classList.remove("hide");
     health -= 1;
   }
-  console.log(score, health)
+  // console.log(score, health)
   if (score === 5 && health != 0) {
-    console.log("logging the modal ", wizModal);
+    // console.log("logging the modal ", wizModal);
     wizModal.style.display = "block";
     wizModalContent.classList.remove("hide");
     document.body.style.backgroundColor = "black"; 
@@ -93,7 +93,7 @@ const questionHandler = (e) => {
 };
 const toggleHandler = () => {
   if (correctModal.style.display === "block") {
-    console.log("logging modal") 
+    // console.log("logging modal") 
     correctModal.style.display = "none";
     correctModalContent.classList.add("hide");
     questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
@@ -137,7 +137,7 @@ const wizBattle = () => {
 
 
 function checkModal() {
-  console.log("checkmodal running")
+  // console.log("checkmodal running")
   nextButton.forEach((e) => {
     e.addEventListener("click", toggleHandler);
   })
@@ -160,7 +160,7 @@ function checkAnswer() {
     //   questionButtons[i].classList.add("hide");
     // })
     // mainButton.classList.remove("hide");
-    // console.log("restart")
+    console.log("restart")
     location.reload();
   }
   function playTheGameAgain() {
@@ -173,12 +173,12 @@ function checkAnswer() {
     
   }
   
-console.log(nextButton)
+// console.log(nextButton)
 
 function startGame() {
   mainButton.addEventListener("click", () => {
     fetchData();
-    console.log(questionButtons);    
+    // console.log(questionButtons);    
     mainButton.classList.add("hide");
     checkModal();
     playTheGameAgain();
