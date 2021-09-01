@@ -80,24 +80,27 @@ const questionHandler = (e) => {
     console.log("logging the modal ", wizModal);
     wizModal.style.display = "block";
     wizModalContent.classList.remove("hide");
-    document.body.style.backgroundColor = "black";    
+    document.body.style.backgroundColor = "black"; 
+    document.querySelector("footer").style.color = "white";   
   } else if (health === 0) {
     gameOver.style.display = "block";
     gameOverContent.classList.remove("hide");
     toggleHandler();
-  } else if (score === 7 && health !=0) {
-    winModal.style.display = "block";
-    winContent.classList.remove("hide");
-  }
+    } else if (score === 7 && health !=0) {
+     winModal.style.display = "block";
+     winContent.classList.remove("hide");
+   }
 };
 const toggleHandler = () => {
   if (correctModal.style.display === "block") {
     console.log("logging modal") 
     correctModal.style.display = "none";
     correctModalContent.classList.add("hide");
+    questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
     }else {
       wrongModal.style.display = "none";
       wrongModalContent.classList.add("none");
+      questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
     }
     fetchData()
 }
@@ -120,7 +123,7 @@ function clearWinLoss() {
 
 const wizBattle = () => {
     clearQuestions();
-    questionButtons.forEach((i, e) => {questionButtons[e].classList.add("hide");})
+    questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
     mainButton.classList.remove("hide");
     mainContent.style.backgroundImage = "url('assets/360_F_289726988_cF9wzIATeSAOBxCg23NqnLeaKVfXWvdy.jpeg')";
     mainContent.style.background = "cover";
@@ -196,6 +199,8 @@ function startGame() {
 //if correctQuess <= 2 display win card
 //else if correctQuess > 2 display death card
 // | x x  = 
+
+
 
 
 
