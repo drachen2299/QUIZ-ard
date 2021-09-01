@@ -102,5 +102,3 @@ open trivia: https://opentdb.com/api.php
 | Total                 |    l     |     34hrs      |     4hrs      |    4hrs     |
 
 # Change log
-
-

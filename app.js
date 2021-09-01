@@ -4,7 +4,7 @@ let mainButton = document.getElementById("play-btn");
 let nextButton = document.querySelectorAll(".next-btn");
 let wizButton = document.querySelector(".wiz-btn");
 let mainText = document.querySelector(".main-text");
-let playAgain = document.querySelector(".try-again-btn");
+let playAgain = document.querySelectorAll(".try-again-btn");
 
 //content containers
 let mainContent = document.querySelector(".main-container");
@@ -14,10 +14,12 @@ let wrongModal = document.getElementById("wrongModal");
 let correctModal = document.getElementById("correctModal");
 let wizModal = document.getElementById("wizModal");
 let gameOver = document.getElementById("deadModal");
+let winModal = document.getElementById("winModal");
 let correctModalContent = document.querySelector(".correct-content");
 let wrongModalContent = document.querySelector(".wrong-content");
 let wizModalContent = document.querySelector(".wiz-content");
 let gameOverContent = document.querySelector(".dead-content");
+let winContent = document.querySelector(".win-content");
 //score counters and health counters
 console.log(wrongModal)
 let score = 0;
@@ -25,6 +27,10 @@ let health = 3;
 let wizCounter = 0;
 //get a random question from the opentdb api
 let correctAnswer;
+//array shuffler
+let shuffle = (a) => {
+  a.sort(() => Math.random() - 0.5);
+}
 async function fetchData() {
   let url = "https://opentdb.com/api.php?amount=1&category=15&encode=base64";
 
@@ -36,8 +42,9 @@ async function fetchData() {
     correctAnswer = data.results[0].correct_answer;
     let wrongAnswers = data.results[0].incorrect_answers;
     let allAnswers = [correctAnswer, ...wrongAnswers];
+    shuffle(allAnswers);
     console.log(fullQuestion);
-    allAnswers.forEach((item, index) => {
+    allAnswers.forEach((item, index) => {    
       mainText.innerText = question;
       console.log(question);
       questionButtons[index].classList.remove("hide");
@@ -78,6 +85,9 @@ const questionHandler = (e) => {
     gameOver.style.display = "block";
     gameOverContent.classList.remove("hide");
     toggleHandler();
+  } else if (score === 7 && health !=0) {
+    winModal.style.display = "block";
+    winContent.classList.remove("hide");
   }
 };
 const toggleHandler = () => {
@@ -104,8 +114,8 @@ function clearQuestions () {
 function clearWinLoss() {
     gameOver.style.display = "none";
     gameOverContent.classList.add("none");
-    // wrongModal.style.display = "none";
-    // wrongModalContent.classList.add("none");
+    winModal.style.display = "none";
+    winContent.classList.add("none");
 }
 
 const wizBattle = () => {
@@ -140,17 +150,24 @@ function checkAnswer() {
 }
 
   function restartGame() {
-    mainText.innerText = "Do you think you have what it takes to defeat the time QUIZ-ard and save the realm?";
-    clearQuestions();
-    clearWinLoss();
-    questionButtons.forEach((e, i) => {
-      questionButtons[i].classList.add("hide");
-    })
-    mainButton.classList.remove("hide");
-    console.log("restart")
+    // mainText.innerText = "Do you think you have what it takes to defeat the time QUIZ-ard and save the realm?";
+    // clearQuestions();
+    // clearWinLoss();
+    // questionButtons.forEach((e, i) => {
+    //   questionButtons[i].classList.add("hide");
+    // })
+    // mainButton.classList.remove("hide");
+    // console.log("restart")
+    location.reload();
   }
   function playTheGameAgain() {
-    playAgain.addEventListener("click", restartGame);
+    playAgain.forEach((e) => {
+      e.removeEventListener("click", restartGame);
+    })
+    playAgain.forEach((e) => {
+      e.addEventListener("click", restartGame);
+    })
+    
   }
   
 console.log(nextButton)
