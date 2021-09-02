@@ -101,7 +101,7 @@ async function fetchData() {
 
     checkAnswer();
     // console.log(url);
-    console.log(atob(correctAnswer));
+    // console.log(atob(correctAnswer));
   } catch (error) {
     console.log(error);
   }
