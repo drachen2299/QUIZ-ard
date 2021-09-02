@@ -60,7 +60,7 @@ function rulesModalClose() {
   rulesModal.style.display = "none";
   rulesContent.classList.add("hide");
 }
-rulesBtn.addEventListener("click", rulesModalDisplay, console.log("clicked"));
+rulesBtn.addEventListener("click", rulesModalDisplay);
 closeBtn.addEventListener("click", rulesModalClose);
 
 //score counters and health counters
