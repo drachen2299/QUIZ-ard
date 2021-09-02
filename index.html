@@ -15,7 +15,7 @@
 <body>
     <nav class="main-nav">
         <img src="assets/Wizard School Illustration.svg" alt="QUIZ-ard logo" class="logo">
-        <a href="#" class="rules">How to play!</a>
+        <button class="rules-btn">How to play!</button>
         
     </nav>
     <main>
@@ -26,7 +26,7 @@
                 <div class="wiz-score"></div>
             </div>
             <div class="category-dropdown">
-                <select name="categories" id="categories" class="catergories" required>
+                <select name="categories" id="categories" class="categories" required>
                     <option value="" disabled selected>Choose a category</option>
                     <option value="9">General Knowledge</option>
                     <option value="10">Books</option>
@@ -49,7 +49,7 @@
             <p class="main-text">Do you think you have what it takes to defeat the time QUIZ-ard and
                 save the realm?
             </p>
-            <img src="assets/1133018_travyboy1_cartoon-knight.jpeg" alt="" class="character">
+            <img src="assets/main-avatar.png" alt="" class="character">
             <div class="grid">
                 <button class="question-btn btn hide"></button>
                 <button class="question-btn btn hide"></button>
@@ -59,6 +59,14 @@
 
             <button id="play-btn" class="btn">Begin</button>
             <button id="wiz-battle-btn" class="btn hide"></button>
+        </div>
+        <div id="rulesModal" class="modal">
+            <div class="rules-content hide">
+                <h1><em>Rules</em>:</h1>
+                    <p>This game is very simply, a Trivia game with a catch!</p>
+                    <p>In order to defeat the time <strong>QUIZ-ard</strong> and save the universe, you need to answer 5 questions correctly. but be warned, every wrong answer you get, you will lose a health point - if you get 3 questions wrong, you <strong>die!</strong> Once you have answered 5 correctly you will have 2 chances to answer the <strong>QUIZ-ard's</strong> riddles or the universe will be destroyed! GL </p>
+                    <button class="close-btn btn">Play</button>
+            </div>
         </div>
         <div id="wrongModal" class="modal">
             <div class="wrong-content hide">
@@ -89,13 +97,14 @@
         </div>
         <div id="deadModal" class="modal">
             <div class="dead-content hide">
-                <img class="gameover-img" src="assets/80.jpeg" alt="Gameover">
+                <img class="gameover-img" src="assets/gameover.jpeg" alt="Gameover">
                 <button class="try-again-btn btn">Play Again</button>
             </div>
         </div>
         <div id="winModal" class="modal">
             <div class="win-content hide">
-                <img class="win-img" src="assets/0_YResHL6XFsjoZl4K.jpeg" alt="Gameover">
+                <h1>You Win!</h1>
+                <img class="win-img" src="assets/main-avatar-win-pose.png" alt="win-avatar">
                 <button class="try-again-btn btn">Play Again</button>
             </div>
         </div>

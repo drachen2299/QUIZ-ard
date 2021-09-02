@@ -5,10 +5,14 @@ let nextButton = document.querySelectorAll(".next-btn");
 let wizButton = document.querySelector(".wiz-btn");
 let mainText = document.querySelector(".main-text");
 let playAgain = document.querySelectorAll(".try-again-btn");
+let rulesBtn = document.querySelector(".rules-btn");
+let closeBtn = document.querySelector(".close-btn");
 
 //content containers
 let mainContent = document.querySelector(".main-container");
 let playerScore = document.querySelector(".score");
+let character = document.querySelector(".character");
+let howToPlay = document.querySelector(".rules");
 //dropdowns
 let categoryDropdown = document.getElementById("categories");
 
@@ -24,11 +28,11 @@ const diffSelected = () => {
  difficultyValue = difficultyDropdown.options[difficultyDropdown.selectedIndex].value;
 }
 categoryDropdown.addEventListener("change", catSelected);
-  console.log(catValue)
+  // console.log(catValue)
 
 
   difficultyDropdown.addEventListener("change", diffSelected);
-  console.log(difficultyValue)
+  // console.log(difficultyValue)
 
 
 
@@ -40,11 +44,25 @@ let correctModal = document.getElementById("correctModal");
 let wizModal = document.getElementById("wizModal");
 let gameOver = document.getElementById("deadModal");
 let winModal = document.getElementById("winModal");
+let rulesModal = document.getElementById("rulesModal");
 let correctModalContent = document.querySelector(".correct-content");
 let wrongModalContent = document.querySelector(".wrong-content");
 let wizModalContent = document.querySelector(".wiz-content");
 let gameOverContent = document.querySelector(".dead-content");
 let winContent = document.querySelector(".win-content");
+let rulesContent = document.querySelector(".rules-content");
+//rules modal trigger
+function rulesModalDisplay() {  
+  rulesModal.style.display = "block";
+  rulesContent.classList.remove("hide");
+}
+function rulesModalClose() {
+  rulesModal.style.display = "none";
+  rulesContent.classList.add("hide");
+}
+rulesBtn.addEventListener("click", rulesModalDisplay, console.log("clicked"));
+closeBtn.addEventListener("click", rulesModalClose);
+
 //score counters and health counters
 // console.log(wrongModal)
 let score = 0;
@@ -82,10 +100,10 @@ async function fetchData() {
     // console.log(question); 
 
     checkAnswer();
-    console.log(url);
+    // console.log(url);
     console.log(atob(correctAnswer));
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 }
 
@@ -154,10 +172,11 @@ const wizBattle = () => {
     clearQuestions();
     questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
     mainButton.classList.remove("hide");
-    mainContent.style.backgroundImage = "url('assets/360_F_289726988_cF9wzIATeSAOBxCg23NqnLeaKVfXWvdy.jpeg')";
-    mainContent.style.background = "cover";
+    mainContent.style.backgroundImage = "url('assets/space.jpg')";
     mainText.style.color = "white";
+    playerScore.style.color = "white";
     mainText.innerText = "The time has come! defeat the evil QUIZ-ard and save the universe! but remember, if you don't answer 2 questions correct - the Universe will be destroyed! Good luck!";
+    character.src = "assets/evil-wiz.png";
     mainButton.innerText = "Begin";
 }
 
@@ -189,7 +208,7 @@ function checkAnswer() {
     //   questionButtons[i].classList.add("hide");
     // })
     // mainButton.classList.remove("hide");
-    console.log("restart")
+    // console.log("restart")
     location.reload();
   }
   function playTheGameAgain() {
@@ -218,7 +237,7 @@ function startGame() {
       alert("Please choose a category and difficulty");
     }
     
-    console.log(fetchData)
+    // console.log(fetchData)
   });}
 
   startGame();
