@@ -206,12 +206,18 @@ function checkAnswer() {
 
 function startGame() {
   mainButton.addEventListener("click", () => {
-    //check if category selected && difficulty selected
-    fetchData();
+    if (catValue != null && difficultyValue != null) {
+      categoryDropdown.style.display = "none";
+      difficultyDropdown.style.display = "none";
+      fetchData();
     // console.log(questionButtons);    
     mainButton.classList.add("hide");
     checkModal();
     playTheGameAgain();
+    } else {
+      alert("Please choose a category and difficulty");
+    }
+    
     console.log(fetchData)
   });}
 
