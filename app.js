@@ -32,7 +32,7 @@ let shuffle = (a) => {
   a.sort(() => Math.random() - 0.5);
 }
 async function fetchData() {
-  let url = "https://opentdb.com/api.php?amount=1&category=15&difficulty=easy&encode=base64";
+  let url = "https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&encode=base64";
 
   try {
     let response = await axios.get(url);
