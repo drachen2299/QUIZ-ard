@@ -8,7 +8,32 @@ let playAgain = document.querySelectorAll(".try-again-btn");
 
 //content containers
 let mainContent = document.querySelector(".main-container");
-let hearts = document.getElementsByClassName(".hearts");
+let playerScore = document.querySelector(".score");
+//dropdowns
+let categoryDropdown = document.getElementById("categories");
+
+
+let difficultyDropdown = document.getElementById("difficulty");
+let catValue;
+let difficultyValue;
+const catSelected = () => {
+  catValue = categoryDropdown.options[categoryDropdown.selectedIndex].value;
+
+}
+const diffSelected = () => {
+ difficultyValue = difficultyDropdown.options[difficultyDropdown.selectedIndex].value;
+}
+categoryDropdown.addEventListener("change", catSelected);
+  console.log(catValue)
+
+
+  difficultyDropdown.addEventListener("change", diffSelected);
+  console.log(difficultyValue)
+
+
+
+
+
 //modals
 let wrongModal = document.getElementById("wrongModal");
 let correctModal = document.getElementById("correctModal");
@@ -25,6 +50,7 @@ let winContent = document.querySelector(".win-content");
 let score = 0;
 let health = 3;
 let wizCounter = 0;
+playerScore.innerText = score;
 //get a random question from the opentdb api
 let correctAnswer;
 //array shuffler
@@ -32,7 +58,8 @@ let shuffle = (a) => {
   a.sort(() => Math.random() - 0.5);
 }
 async function fetchData() {
-  let url = "https://opentdb.com/api.php?amount=1&category=14&difficulty=easy&encode=base64";
+  
+  let url = `https://opentdb.com/api.php?amount=1&category=${catValue}&difficulty=${difficultyValue}&encode=base64`;
 
   try {
     let response = await axios.get(url);
@@ -55,6 +82,7 @@ async function fetchData() {
     // console.log(question); 
 
     checkAnswer();
+    console.log(url);
     console.log(atob(correctAnswer));
   } catch (error) {
     // console.log(error);
@@ -70,6 +98,7 @@ const questionHandler = (e) => {
     correctModal.style.display = "block";
     correctModalContent.classList.remove("hide");
     score += 1;
+    playerScore.innerText++;
   } else {
     wrongModal.style.display = "block";
     wrongModalContent.classList.remove("hide");
@@ -177,16 +206,19 @@ function checkAnswer() {
 
 function startGame() {
   mainButton.addEventListener("click", () => {
+    //check if category selected && difficulty selected
     fetchData();
     // console.log(questionButtons);    
     mainButton.classList.add("hide");
     checkModal();
     playTheGameAgain();
+    console.log(fetchData)
   });}
 
   startGame();
 
-
+//if category selected && difficulty selected pass values of these too url and start game
+//
 
 
 
@@ -199,6 +231,10 @@ function startGame() {
 //if correctQuess <= 2 display win card
 //else if correctQuess > 2 display death card
 // | x x  = 
+
+
+//option = number
+//when user selects an option, pass that value to the url when the start button is clicked
 
 
 

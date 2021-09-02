@@ -20,30 +20,30 @@
     </nav>
     <main>
         <div class="main-container">
-            <p class="hearts"></p>
+            <div class="counters">
+                <p class="hearts"></p>
+                <p class="score"></p>
+                <div class="wiz-score"></div>
+            </div>
             <div class="category-dropdown">
-                <label for="categories">Choose a Category:</label>
-                <select name="categories" id="categories" class="catergories">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                <select name="categories" id="categories" class="catergories" required>
+                    <option value="" disabled selected>Choose a category</option>
+                    <option value="9">General Knowledge</option>
+                    <option value="10">Books</option>
+                    <option value="14">TV</option>
+                    <option value="11">Film</option>
+                    <option value="15">Video Games</option>
+                    <option value="21">Sports</option>
+                    <option value="18">Computers</option>
+                    <option value="12">Music</option>
                 </select>
             </div>
             <div class="difficulty-dropdown">
                 <label for="difficulty">Choose a Difficulty:</label>
-                <select name="difficulty" id="difficulty" class="difficulty">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                <select name="difficulty" id="difficulty" class="difficulty" required>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
                 </select>
             </div>
             <p class="main-text">Do you think you have what it takes to defeat the time QUIZ-ard and
