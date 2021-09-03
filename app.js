@@ -64,7 +64,6 @@ rulesBtn.addEventListener("click", rulesModalDisplay);
 closeBtn.addEventListener("click", rulesModalClose);
 
 //score counters and health counters
-// console.log(wrongModal)
 let score = 0;
 let health = 3;
 let wizCounter = 0;
@@ -88,20 +87,15 @@ async function fetchData() {
     let wrongAnswers = data.results[0].incorrect_answers;
     let allAnswers = [correctAnswer, ...wrongAnswers];
     shuffle(allAnswers);
-    // console.log(fullQuestion);
     allAnswers.forEach((item, index) => {    
       mainText.innerText = question;
-      // console.log(question);
       questionButtons[index].classList.remove("hide");
       questionButtons[index].innerText = atob(item);
       questionButtons[index]++;
     });
 
-    // console.log(question); 
 
     checkAnswer();
-    // console.log(url);
-    console.log(atob(correctAnswer));
   } catch (error) {
     console.log(error);
   }
@@ -109,10 +103,7 @@ async function fetchData() {
 
 
 const questionHandler = (e) => {
-  // console.log(e.target.innerText);
-  // console.log(correctAnswer);
   if (e.target.innerText === atob(correctAnswer)) {
-    // console.log("logging the modal ", correctModal);
     correctModal.style.display = "block";
     correctModalContent.classList.remove("hide");
     score += 1;
@@ -122,9 +113,8 @@ const questionHandler = (e) => {
     wrongModalContent.classList.remove("hide");
     health -= 1;
   }
-  // console.log(score, health)
+
   if (score === 5 && health != 0) {
-    // console.log("logging the modal ", wizModal);
     wizModal.style.display = "block";
     wizModalContent.classList.remove("hide");
     document.body.style.backgroundColor = "black"; 
@@ -167,7 +157,6 @@ const questionHandler = (e) => {
 
 const toggleHandler = () => {
   if (correctModal.style.display === "block") {
-    // console.log("logging modal") 
     correctModal.style.display = "none";
     correctModalContent.classList.add("hide");
     questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
@@ -239,15 +228,14 @@ function checkAnswer() {
     
   }
   
-// console.log(nextButton)
+
 
 function startGame() {
   mainButton.addEventListener("click", () => {
     if (catValue != null && difficultyValue != null) {
       categoryDropdown.style.display = "none";
       difficultyDropdown.style.display = "none";
-      fetchData();
-    // console.log(questionButtons);    
+      fetchData();  
     mainButton.classList.add("hide");
     checkModal();
     playTheGameAgain();
@@ -255,29 +243,11 @@ function startGame() {
       alert("Please choose a category and difficulty");
     }
     
-    // console.log(fetchData)
+    
   });}
 
   startGame();
 
-//if category selected && difficulty selected pass values of these too url and start game
-//
-
-
-
-
-
-
-//you have 2 chances of 3 to win, if you click wrongANswer more than twice lose the game 
-//[true, true, false]
-//wiz = 3 
-//if correctQuess <= 2 display win card
-//else if correctQuess > 2 display death card
-// | x x  = 
-
-
-//option = number
-//when user selects an option, pass that value to the url when the start button is clicked
 
 
 
