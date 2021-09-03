@@ -16,27 +16,19 @@ let howToPlay = document.querySelector(".rules");
 //dropdowns
 let categoryDropdown = document.getElementById("categories");
 
-
 let difficultyDropdown = document.getElementById("difficulty");
 let catValue;
 let difficultyValue;
 const catSelected = () => {
   catValue = categoryDropdown.options[categoryDropdown.selectedIndex].value;
-
-}
+};
 const diffSelected = () => {
- difficultyValue = difficultyDropdown.options[difficultyDropdown.selectedIndex].value;
-}
+  difficultyValue =
+    difficultyDropdown.options[difficultyDropdown.selectedIndex].value;
+};
 categoryDropdown.addEventListener("change", catSelected);
-  // console.log(catValue)
 
-
-  difficultyDropdown.addEventListener("change", diffSelected);
-  // console.log(difficultyValue)
-
-
-
-
+difficultyDropdown.addEventListener("change", diffSelected);
 
 //modals
 let wrongModal = document.getElementById("wrongModal");
@@ -52,7 +44,7 @@ let gameOverContent = document.querySelector(".dead-content");
 let winContent = document.querySelector(".win-content");
 let rulesContent = document.querySelector(".rules-content");
 //rules modal trigger
-function rulesModalDisplay() {  
+function rulesModalDisplay() {
   rulesModal.style.display = "block";
   rulesContent.classList.remove("hide");
 }
@@ -73,9 +65,8 @@ let correctAnswer;
 //array shuffler
 let shuffle = (a) => {
   a.sort(() => Math.random() - 0.5);
-}
+};
 async function fetchData() {
-  
   let url = `https://opentdb.com/api.php?amount=1&category=${catValue}&difficulty=${difficultyValue}&encode=base64`;
 
   try {
@@ -87,20 +78,18 @@ async function fetchData() {
     let wrongAnswers = data.results[0].incorrect_answers;
     let allAnswers = [correctAnswer, ...wrongAnswers];
     shuffle(allAnswers);
-    allAnswers.forEach((item, index) => {    
+    allAnswers.forEach((item, index) => {
       mainText.innerText = question;
       questionButtons[index].classList.remove("hide");
       questionButtons[index].innerText = atob(item);
       questionButtons[index]++;
     });
 
-
     checkAnswer();
   } catch (error) {
     console.log(error);
   }
 }
-
 
 const questionHandler = (e) => {
   if (e.target.innerText === atob(correctAnswer)) {
@@ -117,16 +106,16 @@ const questionHandler = (e) => {
   if (score === 5 && health != 0) {
     wizModal.style.display = "block";
     wizModalContent.classList.remove("hide");
-    document.body.style.backgroundColor = "black"; 
-    document.querySelector("footer").style.color = "white";   
+    document.body.style.backgroundColor = "black";
+    document.querySelector("footer").style.color = "white";
   } else if (health === 0) {
     gameOver.style.display = "block";
     gameOverContent.classList.remove("hide");
     toggleHandler();
-  } else if (score === 7 && health !=0) {
-         winModal.style.display = "block";
-         winContent.classList.remove("hide");
-       }
+  } else if (score === 7 && health != 0) {
+    winModal.style.display = "block";
+    winContent.classList.remove("hide");
+  }
 };
 
 // const wizQuestionHandler = (e) => {
@@ -139,71 +128,76 @@ const questionHandler = (e) => {
 //     wrongModal.style.display = "block";
 //     wrongModalContent.classList.remove("hide");
 //     if (wizCounter === 2){
-          //winModal
-      //} else if (wizCounter === 1)
+//winModal
+//} else if (wizCounter === 1)
 //   }
 //   if (score === 5 && health != 0) {
 //     console.log("logging the modal ", wizModal);
 //     wizModal.style.display = "block";
 //     wizModalContent.classList.remove("hide");
-//     document.body.style.backgroundColor = "black"; 
-//     document.querySelector("footer").style.color = "white";   
+//     document.body.style.backgroundColor = "black";
+//     document.querySelector("footer").style.color = "white";
 //   } else if (health === 0) {
 //     gameOver.style.display = "block";
 //     gameOverContent.classList.remove("hide");
 //     toggleHandler();
-//     } 
+//     }
 // };
 
 const toggleHandler = () => {
   if (correctModal.style.display === "block") {
     correctModal.style.display = "none";
     correctModalContent.classList.add("hide");
-    questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
-    }else {
-      wrongModal.style.display = "none";
-      wrongModalContent.classList.add("none");
-      questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
-    }
-    fetchData()
-}
-
-function clearQuestions () {
-    correctModal.style.display = "none";
-    correctModalContent.classList.add("none");
+    questionButtons.forEach((item, index) => {
+      questionButtons[index].classList.add("hide");
+    });
+  } else {
     wrongModal.style.display = "none";
     wrongModalContent.classList.add("none");
-    wizModal.style.display = "none";
-    wizModalContent.classList.add("none");
+    questionButtons.forEach((item, index) => {
+      questionButtons[index].classList.add("hide");
+    });
+  }
+  fetchData();
+};
+
+function clearQuestions() {
+  correctModal.style.display = "none";
+  correctModalContent.classList.add("none");
+  wrongModal.style.display = "none";
+  wrongModalContent.classList.add("none");
+  wizModal.style.display = "none";
+  wizModalContent.classList.add("none");
 }
 
 function clearWinLoss() {
-    gameOver.style.display = "none";
-    gameOverContent.classList.add("none");
-    winModal.style.display = "none";
-    winContent.classList.add("none");
+  gameOver.style.display = "none";
+  gameOverContent.classList.add("none");
+  winModal.style.display = "none";
+  winContent.classList.add("none");
 }
 
 const wizBattle = () => {
-    clearQuestions();
-    questionButtons.forEach((item, index) => {questionButtons[index].classList.add("hide");})
-    mainButton.classList.remove("hide");
-    mainContent.style.backgroundImage = "url('assets/space.jpg')";
-    mainText.style.color = "white";
-    playerScore.style.color = "white";
-    mainText.innerText = "The time has come! defeat the evil QUIZ-ard and save the universe! you must answer 2 more questions correctly or the Universe will be destroyed! Good luck!";
-    character.src = "assets/evil-wiz.png";
-    mainButton.innerText = "Begin";
-}
+  clearQuestions();
+  questionButtons.forEach((item, index) => {
+    questionButtons[index].classList.add("hide");
+  });
+  mainButton.classList.remove("hide");
+  mainContent.style.backgroundImage = "url('assets/space.jpg')";
+  mainText.style.color = "white";
+  playerScore.style.color = "white";
+  mainText.innerText =
+    "The time has come! defeat the evil QUIZ-ard and save the universe! you must answer 2 more questions correctly or the Universe will be destroyed! Good luck!";
+  character.src = "assets/evil-wiz.png";
+  mainButton.innerText = "Begin";
+};
 
-
-  wizButton.addEventListener("click", wizBattle);
-
+wizButton.addEventListener("click", wizBattle);
 
 function checkModal() {
   nextButton.forEach((e) => {
     e.addEventListener("click", toggleHandler);
-  })
+  });
 }
 
 function checkAnswer() {
@@ -215,41 +209,31 @@ function checkAnswer() {
   });
 }
 
-  function restartGame() {
-    location.reload();
-  }
-  function playTheGameAgain() {
-    playAgain.forEach((e) => {
-      e.removeEventListener("click", restartGame);
-    })
-    playAgain.forEach((e) => {
-      e.addEventListener("click", restartGame);
-    })
-    
-  }
-  
-
+function restartGame() {
+  location.reload();
+}
+function playTheGameAgain() {
+  playAgain.forEach((e) => {
+    e.removeEventListener("click", restartGame);
+  });
+  playAgain.forEach((e) => {
+    e.addEventListener("click", restartGame);
+  });
+}
 
 function startGame() {
   mainButton.addEventListener("click", () => {
     if (catValue != null && difficultyValue != null) {
       categoryDropdown.style.display = "none";
       difficultyDropdown.style.display = "none";
-      fetchData();  
-    mainButton.classList.add("hide");
-    checkModal();
-    playTheGameAgain();
+      fetchData();
+      mainButton.classList.add("hide");
+      checkModal();
+      playTheGameAgain();
     } else {
       alert("Please choose a category and difficulty");
     }
-    
-    
-  });}
+  });
+}
 
-  startGame();
-
-
-
-
-
-
+startGame();
