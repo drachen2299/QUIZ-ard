@@ -101,7 +101,7 @@ async function fetchData() {
 
     checkAnswer();
     // console.log(url);
-    // console.log(atob(correctAnswer));
+    console.log(atob(correctAnswer));
   } catch (error) {
     console.log(error);
   }
@@ -133,11 +133,38 @@ const questionHandler = (e) => {
     gameOver.style.display = "block";
     gameOverContent.classList.remove("hide");
     toggleHandler();
-    } else if (score === 7 && health !=0) {
-     winModal.style.display = "block";
-     winContent.classList.remove("hide");
-   }
+  } else if (score === 7 && health !=0) {
+         winModal.style.display = "block";
+         winContent.classList.remove("hide");
+       }
 };
+
+// const wizQuestionHandler = (e) => {
+//   if (e.target.innerText === atob(correctAnswer)) {
+//     correctModal.style.display = "block";
+//     correctModalContent.classList.remove("hide");
+//     wizCounter += 1;
+//     playerScore.innerText++;
+//   } else {
+//     wrongModal.style.display = "block";
+//     wrongModalContent.classList.remove("hide");
+//     if (wizCounter === 2){
+          //winModal
+      //} else if (wizCounter === 1)
+//   }
+//   if (score === 5 && health != 0) {
+//     console.log("logging the modal ", wizModal);
+//     wizModal.style.display = "block";
+//     wizModalContent.classList.remove("hide");
+//     document.body.style.backgroundColor = "black"; 
+//     document.querySelector("footer").style.color = "white";   
+//   } else if (health === 0) {
+//     gameOver.style.display = "block";
+//     gameOverContent.classList.remove("hide");
+//     toggleHandler();
+//     } 
+// };
+
 const toggleHandler = () => {
   if (correctModal.style.display === "block") {
     // console.log("logging modal") 
@@ -175,7 +202,7 @@ const wizBattle = () => {
     mainContent.style.backgroundImage = "url('assets/space.jpg')";
     mainText.style.color = "white";
     playerScore.style.color = "white";
-    mainText.innerText = "The time has come! defeat the evil QUIZ-ard and save the universe! but remember, if you don't answer 2 questions correct - the Universe will be destroyed! Good luck!";
+    mainText.innerText = "The time has come! defeat the evil QUIZ-ard and save the universe! you must answer 2 more questions correctly or the Universe will be destroyed! Good luck!";
     character.src = "assets/evil-wiz.png";
     mainButton.innerText = "Begin";
 }
@@ -185,7 +212,6 @@ const wizBattle = () => {
 
 
 function checkModal() {
-  // console.log("checkmodal running")
   nextButton.forEach((e) => {
     e.addEventListener("click", toggleHandler);
   })
@@ -201,14 +227,6 @@ function checkAnswer() {
 }
 
   function restartGame() {
-    // mainText.innerText = "Do you think you have what it takes to defeat the time QUIZ-ard and save the realm?";
-    // clearQuestions();
-    // clearWinLoss();
-    // questionButtons.forEach((e, i) => {
-    //   questionButtons[i].classList.add("hide");
-    // })
-    // mainButton.classList.remove("hide");
-    // console.log("restart")
     location.reload();
   }
   function playTheGameAgain() {
