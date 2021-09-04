@@ -10,7 +10,9 @@ let closeBtn = document.querySelector(".close-btn");
 
 //content containers
 let mainContent = document.querySelector(".main-container");
+let mainCounters = document.querySelector(".counters");
 let playerScore = document.querySelector(".score");
+let playersHealth = document.querySelector(".hearts");
 let character = document.querySelector(".character");
 let howToPlay = document.querySelector(".rules");
 //dropdowns
@@ -101,6 +103,8 @@ const questionHandler = (e) => {
     wrongModal.style.display = "block";
     wrongModalContent.classList.remove("hide");
     health -= 1;
+    playersHealth.removeChild(playersHealth.lastElementChild);
+
   }
 
   if (score === 5 && health != 0) {
@@ -226,6 +230,7 @@ function startGame() {
     if (catValue != null && difficultyValue != null) {
       categoryDropdown.style.display = "none";
       difficultyDropdown.style.display = "none";
+      mainCounters.classList.remove("hide");
       fetchData();
       mainButton.classList.add("hide");
       checkModal();
