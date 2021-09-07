@@ -189,7 +189,7 @@ const wizBattle = () => {
   mainButton.classList.remove("hide");
   mainContent.style.backgroundImage = "url('assets/space.jpg')";
   mainText.style.color = "white";
-  playerScore.style.color = "white";
+  mainCounters.style.color = "white";
   mainText.innerText =
     "The time has come! defeat the evil QUIZ-ard and save the universe! you must answer 2 more questions correctly or the Universe will be destroyed! Good luck!";
   character.src = "assets/evil-wiz.png";
